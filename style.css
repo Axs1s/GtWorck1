@@ -16,3 +16,7 @@
     align-items: center;
     padding-top: 90px;
 }
+
+body{
+    background-color: gray;
+}
