@@ -11,14 +11,21 @@ for (let i = 0; i < 3; i++) {
     }
 }
 
+let board = Array(3).fill(null).map(() => Array(3).fill(null))
 
-canvas.addEventListener('click', function(){
+canvas.addEventListener('click', function(event){
 
     rect = this.getBoundingClientRect()
-    let x = event.clientX - rect.left
-    let y = event.clientY - rect.top
+    let corX = event.clientX - rect.left
+    let corY = event.clientY - rect.top
+
+    let rectX = Math.floor(corX / size)
+    let rectY = Math.floor(corY / size)
     
-    ctx.drawImage(X,x,y,100,100)
+    ctx.drawImage(X, rectX * 215, rectY * 215, 150, 150)
+
+    if (boar[rectX][rectY] !== null)return;
 
 })
 
+currentMove = X
